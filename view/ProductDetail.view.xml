@@ -1,0 +1,69 @@
+<mvc:View controllerName="imropro.controller.ProductDetail"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+     xmlns:sf="sap.ui.layout.form"
+    xmlns="sap.m">
+    <Page id="page" title="IMRO Product Details" class="sapUiResponsiveContent sapUiTheme sapUiSizeCompact">                  
+                       
+    <VBox class="sapUiSmallMargin" id="vBox1">
+    <sf:SimpleForm id="simpleform" 
+        editable="false"
+        layout="ResponsiveGridLayout"
+        title="Product Detail"
+        labelSpanXL="3"
+        labelSpanL="3"
+        labelSpanM="3"
+        labelSpanS="12"
+        adjustLabelSpan="false"
+        emptySpanXL="4"
+        emptySpanM="4"
+        emptySpanL="4"
+        emptySpanS="0"
+        columnsXL="1"
+        columnsL="1"
+        columnsM="1"
+        singleContainerFullSize="false" >
+        <sf:content>
+            <Label id="lab1" text="Product ID" />
+            <Text id="text9" text="{products>ProductID}" />
+
+            <Label id="lab2" text="Product Name" />
+            <Text id="text8" text="{products>ProductName}" />
+
+            <Label id="lab3" text="Unit Price" />
+            <Text id="text7" text="{products>UnitPrice}" />
+
+             <Label id="lab4" text="Supplier ID" />
+            <Text id="text6" text="{products>SupplierID}" />
+
+             <Label id="lab5" text="Category ID" />
+            <Text id="text5" text="{products>CategoryID}" />
+
+             <Label id="lab6" text="Quantity Per Unit" />
+            <Text id="text4" text="{products>QuantityPerUnit}" />
+
+            <Label id="lab7" text="Units InStock" />
+            <Text id="text2" text="{products>UnitsInStock}" />
+
+             <Label id="lab8" text="Units OnOrder" />
+            <Text id="text3" text="{products>UnitsOnOrder}" />
+
+             <Label id="lab9" text="Reorder Level" />
+            <Text id="text1" text="{products>ReorderLevel}" />
+
+        </sf:content>
+    </sf:SimpleForm>    
+    </VBox>
+        <footer>
+            <OverflowToolbar id="ov1">
+                <content>
+                    <ToolbarSpacer id="tl1" />
+                    <Link id="l1" text="Contact Us" href="https://www.hcltech.com/sap" />
+                    <Text id="t171" text="IMRO Product PVT Ltd" />
+                </content>
+            </OverflowToolbar>
+        </footer>
+    </Page>
+         
+
+
+</mvc:View>
