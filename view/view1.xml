@@ -1,0 +1,92 @@
+<mvc:View controllerName="imropro.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="IMRO Product Management" class="sapUiResponsiveContent sapUiTheme sapUiSizeCompact">                  
+                <headerContent>
+                    <OverflowToolbar id="fbar1">
+                        <ToolbarSpacer id="toba" />
+                         <SearchField
+                            id="se1"
+                            width="50%"
+                            class="rightAlignSearchField"               
+                            placeholder="Product id/ name"
+                            search="onSearchProducts"
+                            />   
+                        <Button id="b1" icon= "sap-icon://detail-view" press="onOpenVieweDialog" />
+                        <Button id="b2" icon= "sap-icon://add" press="onCreateProduct" />
+                        <Button id="b3" icon= "sap-icon://edit" press="onOpenUpdateDialog" />
+                        <Button id="b4" icon= "sap-icon://delete" press="onDeleteProduct" />
+                    </OverflowToolbar>
+                </headerContent>
+                <VBox id="vb1" class="sapUiSmallMargin">     
+                   <Table
+                       id="productTable"
+                       inset="false"
+                       items="{products>/Products}"
+                       mode="SingleSelectMaster"
+                       selectionChange="onSelectionChange"
+                       growing="true" growingThreshold="18"
+                   >
+                       <columns>
+                           <Column id="c1">
+                               <Text id="t1" text="Product ID" />
+                           </Column>
+                           <Column id="c2">
+                               <Text id="t2" text="Product Name" />
+                           </Column>
+                           <Column id="c3">
+                               <Text id="t5" text="Unit Price" />
+                           </Column>
+                           <Column id="c5">
+                               <Text id="t6" text="Supplier ID" />
+                           </Column>
+                           <Column id="c6">
+                               <Text id="t8" text="Category ID" />
+                           </Column>
+                           <Column id="c7">
+                               <Text id="t9" text="Quantity Per Unit" />
+                           </Column>
+                           <Column id="c8">
+                               <Text id="t10" text="Units InStock" />
+                           </Column>
+                           <Column id="c9">
+                               <Text id="t11" text="Units OnOrder" />
+                           </Column>
+                           <Column id="c10">
+                               <Text id="t12" text="Reorder Level" />
+                           </Column>
+                       </columns>
+                       <items>
+                           <ColumnListItem id="cl1" highlight="{= ${products>UnitPrice} > 10 ? 'Success' : 'Error' }">
+                        
+                               <cells>
+                                   <ObjectIdentifier id="obj1" title="{products>ProductID}" />
+                                   <Text id="tx14" text="{products>ProductName}" />
+                                   <Text id="t15" text="{products>UnitPrice}" />
+                                   <Text id="tx16" text="{products>SupplierID}" />
+                                   <Text id="t17" text="{products>CategoryID}" />
+                                    <Text id="t18" text="{products>QuantityPerUnit}" />
+                                   <Text id="t19" text="{products>UnitsInStock}" />
+                                    <Text id="t20" text="{products>UnitsOnOrder}" />
+                                   <Text id="t21" text="{products>ReorderLevel}" />
+                                    <Text id="t22" text="{products>ProductName}" />
+                                  
+                               </cells>
+                           </ColumnListItem>
+                       </items>
+                   </Table>                  
+               </VBox> 
+        <footer>
+            <OverflowToolbar id="ov1">
+                <content>
+                    <ToolbarSpacer id="tl1" />
+                    <Link id="l1" text="Contact Us" href="https://www.hcltech.com/sap" />
+                    <Text id="t171" text="IMRO Product PVT Ltd" />
+                </content>
+            </OverflowToolbar>
+        </footer>
+    </Page>
+         
+
+
+</mvc:View>
